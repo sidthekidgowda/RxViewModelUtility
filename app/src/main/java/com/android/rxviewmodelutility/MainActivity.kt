@@ -1,7 +1,7 @@
 package com.android.rxviewmodelutility
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.rxviewmodelutility.sample.SampleViewModel
 import dagger.android.support.DaggerAppCompatActivity
@@ -13,11 +13,27 @@ class MainActivity : DaggerAppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    private lateinit var sampleViewModel: SampleViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sampleViewModel = ViewModelProvider(this, viewModelFactory).get(SampleViewModel::class.java)
-        name.text = sampleViewModel.getName()
+        sampleViewModel = ViewModelProvider(this, viewModelFactory).get(SampleViewModel::class.java)
+        sampleViewModel.nameLiveData.observe(this, Observer {
+            name.text = it
+        })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sampleViewModel.getName()
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        name.text = ""
+        sampleViewModel.clearDisposables()
     }
 }
