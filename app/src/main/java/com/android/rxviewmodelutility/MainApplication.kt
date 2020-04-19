@@ -1,6 +1,5 @@
 package com.android.rxviewmodelutility
 
-import android.app.Application
 import com.android.rxviewmodelutility.di.DaggerMainComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
