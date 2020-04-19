@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.android.rxviewmodelutility.BaseRxViewModel
 import com.android.rxviewmodelutility.SingleLiveEvent
+import com.android.rxviewmodelutility.addSchedulers
 import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -25,8 +25,7 @@ class SampleViewModel @Inject constructor(
     fun getName() {
         addDisposable(
             Single.just(sampleInterface.provideName())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .addSchedulers(Schedulers.io())
                 .subscribe({
                     _nameLiveData.value = it
                 }, {
