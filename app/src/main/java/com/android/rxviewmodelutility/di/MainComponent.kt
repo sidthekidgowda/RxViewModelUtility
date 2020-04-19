@@ -1,6 +1,8 @@
 package com.android.rxviewmodelutility.di
 
+import com.android.rxviewmodelutility.MainApplication
 import dagger.Component
+import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 
 @Component(
@@ -10,6 +12,4 @@ import dagger.android.support.AndroidSupportInjectionModule
         ViewModelModule::class
     ]
 )
-interface MainComponent {
-
-}
+interface MainComponent : AndroidInjector<MainApplication>
