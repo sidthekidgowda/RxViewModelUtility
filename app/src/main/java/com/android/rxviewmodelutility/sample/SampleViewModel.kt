@@ -36,6 +36,6 @@ class SampleViewModel @Inject constructor(
     }
 
     fun buttonClick() {
-        _nextButtonClicked.postValue(true)
+        _nextButtonClicked.setValue(true)
     }
 }
