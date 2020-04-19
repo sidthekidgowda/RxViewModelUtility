@@ -1,5 +1,6 @@
 package com.android.rxviewmodelutility
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -23,12 +24,22 @@ class MainActivity : DaggerAppCompatActivity() {
         sampleViewModel.nameLiveData.observe(this, Observer {
             name.text = it
         })
+
+        next_button.setOnClickListener {
+            sampleViewModel.buttonClick()
+        }
     }
 
     override fun onResume() {
         super.onResume()
         sampleViewModel.getName()
 
+        sampleViewModel.nextButtonClicked.observe(this, Observer {
+            if (it) {
+                val intent = Intent(this, NextActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 
     override fun onPause() {
