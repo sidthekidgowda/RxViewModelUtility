@@ -2,15 +2,20 @@
 
 A library that provides the following classes you need to quickly start any Android project:
 
-  BaseRxViewModel - is an abstract viewmodel that allows easy use and handling of RxJava
+  #### BaseRxViewModel
+  - is an abstract viewmodel that handles RxJava subscriptions.
   
-  RxSchedulers - is a kotlin utility class that allows you to handle thread scheduling
+  #### RxSchedulers 
+  - is a kotlin utility class that allows upstream and downstream thread scheduling of Flowable, Single, Observable, and Completable.
   
-  SingleLiveEvent - is a LiveData that only emits once to a subscriber when onChanged is called.
+  #### SingleLiveEvent 
+  - is a LiveData that only emits once to a subscriber when onChanged is called.
   
-  ViewModelFactory - is a factory integrated with Dagger that creates ViewModels with dependencies.
+  #### ViewModelFactory 
+  - is a factory integrated with Dagger that creates ViewModels that are defined in modules.
   
-  ViewModelKey - is a multibinding dagger can use to add to the ViewModel map, which the ViewModelFactory needs to create that ViewModel 
+  #### ViewModelKey 
+  - is a multibinding dagger can use to add to the ViewModel map, which the ViewModelFactory needs to create that ViewModel. 
   
 
 To integrate RxViewModelUtility:
