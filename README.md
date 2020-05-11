@@ -12,7 +12,7 @@ A library that provides the following classes you need to quickly start any Andr
   - is a LiveData that only emits once to a subscriber when onChanged is called.
   
   #### ViewModelFactory 
-  - is a factory integrated with Dagger that creates ViewModels that are defined in modules.
+  - is a factory integrated with Dagger that is used to generate ViewModels via ViewModelProviders(ViewModelStoreOwner owner, Factory factory).
   
   #### ViewModelKey 
   - is a multibinding Dagger can use to add to the ViewModel map, which the ViewModelFactory needs to create that ViewModel. 
