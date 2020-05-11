@@ -6,7 +6,7 @@ A library that provides the following classes you need to quickly start any Andr
   - is an abstract viewmodel that handles RxJava subscriptions.
   
   #### RxSchedulers 
-  - is a kotlin utility class that allows upstream and downstream thread scheduling of Flowable, Single, Observable, and Completable.
+  - is a kotlin utility class that allows upstream and downstream thread scheduling of Flowable, Single, Observable, and Completable classes.
   
   #### SingleLiveEvent 
   - is a LiveData that only emits once to a subscriber when onChanged is called.
@@ -15,7 +15,7 @@ A library that provides the following classes you need to quickly start any Andr
   - is a factory integrated with Dagger that creates ViewModels that are defined in modules.
   
   #### ViewModelKey 
-  - is a multibinding dagger can use to add to the ViewModel map, which the ViewModelFactory needs to create that ViewModel. 
+  - is a multibinding Dagger can use to add to the ViewModel map, which the ViewModelFactory needs to create that ViewModel. 
   
 
 To integrate RxViewModelUtility:
