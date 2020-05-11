@@ -18,7 +18,7 @@ A library that provides the following classes you need to quickly start any Andr
   - is a multibinding Dagger can use to add to the ViewModel map, which the ViewModelFactory needs to create that ViewModel. 
   
 
-To integrate RxViewModelUtility:
+## How to integrate:
 
 ```
 build.gradle - project level
