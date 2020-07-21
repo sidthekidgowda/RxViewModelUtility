@@ -31,6 +31,6 @@ allprojects {
 
 build.gradle - App level
 dependencies {
-  implementation 'com.github.sidthekidgowda:rxviewmodelutility:1.1'
+  implementation 'com.github.sidthekidgowda:rxviewmodelutility:1.2'
 }
 ```
