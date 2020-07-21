@@ -8,6 +8,9 @@ A library that provides the following classes you need to quickly start any Andr
   #### RxSchedulers 
   - is a kotlin utility class that allows upstream and downstream thread scheduling of Flowable, Single, Observable, and Completable classes.
   
+   #### RxSchedulerRule
+  - is a TestRule that allows you to test asynchronous code inside your ViewModel or Datasource.
+  
   #### SingleLiveEvent 
   - is a LiveData that only emits once to a subscriber when onChanged is called.
   
